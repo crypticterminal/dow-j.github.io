@@ -32,7 +32,7 @@ collections:
   tutorials:
     output: true
 
-name: JDow.io
+title: JDow.io
 description: Software Engineering and Information Security Blog
 url: http://jdow.io
 
