@@ -1,0 +1,21 @@
+<div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the blog…</option>
+    <option value="/blog/">Blog</option>
+    <optgroup label="Software Engineering">
+      {% for post in site.categories.software-engineering %}
+      <option value="{{ post.url }}">{{ post.title }}</option>
+      {% endfor %}
+    </optgroup>
+    <optgroup label="Information Security">
+      {% for post in site.categories.information-security %}
+      <option value="{{ post.url }}">{{ post.title }}</option>
+      {% endfor %}
+    </optgroup>
+    <optgroup label="Walkthroughs">
+      {% for post in site.categories.walkthroughs %}
+      <option value="{{ post.url }}">{{ post.title }}</option>
+      {% endfor %}
+    </optgroup>
+  </select>
+</div>

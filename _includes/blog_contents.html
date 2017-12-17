@@ -1,0 +1,51 @@
+<div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    <ul>
+      <li class="{% if page.title == 'Blog' %}current{% endif %}">
+        <a href="/blog/">All Blog Posts</a>
+      </li>
+      <li class="{% if page.title == 'Software Engineering' %}current{% endif %}">
+        <a href="/blog/software-engineering/">Software Engineering</a>
+      </li>
+      <li class="{% if page.title == 'Information Security' %}current{% endif %}">
+        <a href="/blog/information-security/">Information Security</a>
+      </li>
+      <li class="{% if page.title == 'Walkthroughs' %}current{% endif %}">
+        <a href="/blog/walkthroughs/">Walkthroughs</a>
+      </li>
+    </ul>
+    <h4>Software Engineering</h4>
+    <ul>
+      {% for post in site.categories.software-engineering limit:5 %}
+      <li class="{% if page.title == post.title %}current{% endif %}">
+        <a href="{{ post.url }}"> {{ post.title }}</a>
+      </li>
+      {% endfor %}
+      <li>
+        <a href="/blog/software-engineering">More »</a>
+      </li>
+    </ul>
+    <h4>Information Security</h4>
+    <ul>
+      {% for post in site.categories.information-security limit:5 %}
+      <li class="{% if page.title == post.title %}current{% endif %}">
+        <a href="{{ post.url }}"> {{ post.title }}</a>
+      </li>
+      {% endfor %}
+      <li>
+        <a href="/blog/information-security">More »</a>
+      </li>
+    </ul>
+    <h4>Walkthroughs</h4>
+    <ul>
+      {% for post in site.categories.walkthroughs limit:5 %}
+      <li class="{% if page.title == post.title %}current{% endif %}">
+        <a href="{{ post.url }}"> {{ post.title }}</a>
+      </li>
+      {% endfor %}
+      <li>
+        <a href="/blog/walkthroughs">More »</a>
+      </li>
+    </ul>
+  </aside>
+</div>
