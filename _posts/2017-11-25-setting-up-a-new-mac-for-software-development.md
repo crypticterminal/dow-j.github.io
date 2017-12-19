@@ -3,7 +3,7 @@ title: Setting Up a New Mac for Software Development
 date: '2017-11-25 13:28:00 +0000'
 author: dow-j
 categories:
-  - software-engineering
+  - software-development
 published: true
 ---
 

@@ -1,9 +1,9 @@
 <div class="docs-nav-mobile unit whole show-on-mobiles">
   <select onchange="if (this.value) window.location.href=this.value">
     <option value="">Navigate the blog…</option>
-    <option value="/blog/">Blog</option>
-    <optgroup label="Software Engineering">
-      {% for post in site.categories.software-engineering %}
+    <option value="/blog/">All Blog Posts</option>
+    <optgroup label="Software Development">
+      {% for post in site.categories.software-development %}
       <option value="{{ post.url }}">{{ post.title }}</option>
       {% endfor %}
     </optgroup>
