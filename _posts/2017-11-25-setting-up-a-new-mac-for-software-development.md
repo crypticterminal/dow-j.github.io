@@ -1,13 +1,15 @@
 ---
-title:  "Setting Up a New Mac for Software Development"
-date:   2017-11-25 13:28:00 +0000
+title: Setting Up a New Mac for Software Development
+date: '2017-11-25 13:28:00 +0000'
 author: dow-j
-categories: [software-engineering]
+categories:
+  - software-engineering
+published: true
 ---
 
-Hi everyone and welcome to my site! This is my first blog post so please bear with me while I get the hang of things. If you'd like to learn a little bit more about me be sure to check out my [about me](http://programmingwithjosh.com/about) page.
+Hi everyone and welcome to my site! This is my first blog post so please bear with me while I get the hang of things. If you'd like to learn a little bit more about me be sure to check out my [about me](https://jdow.io/about/) page.
 
-I recently purchased a new MacBook Air after working in almost a purely windows environment for most of my career and while it wasn't _too_ tricky to get setup it definitely had its challenges. So I figured that I would document the steps I took to get everything up and running.
+I recently purchased a new MacBook Air and I figured that I would document the steps I took to get everything up and running.
 
 So without further ado, here are the steps I took to get it setup.
 
