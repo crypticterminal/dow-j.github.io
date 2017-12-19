@@ -358,3 +358,172 @@ bandit20
 $ ./bandit20-do cat /etc/bandit_pass/bandit20
 GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 ```
+
+## Level 20 -> 21
+
+There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).
+
+**NOTE:** Changes to the infrastructure made this level more difficult. You will need to figure out a way to launch multiple commands in the same Docker instance.
+
+**NOTE 2:** Try connecting to your own network daemon to see if it works as you think
+```
+$ ls
+suconnect
+$ .suconnect
+Usage: ./suconnect <portnumber>
+This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back.
+$ nc -l 5666
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+<Open a new terminal>
+$ ./suconnect 5666
+<In the previous terminal>
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+```
+
+## Level 21 -> 22
+
+A program is running automatically at regular intervals from **cron**, the time-based job scheduler. Look in **/etc/cron.d/** for the configuration and see what command is being executed.
+```
+$ cd /etc/cron.d
+$ ls -l
+-rw-r--r-- 1 root root 120 Nov 13 15:58 cronjob_bandit22
+-rw-r--r-- 1 root root 122 Nov 13 15:58 cronjob_bandit23
+-rw-r--r-- 1 root root 120 Nov 13 15:58 cronjob_bandit24
+-rw-r--r-- 1 root root 190 Oct 31 13:21 popularity-contest
+$ cat cronjob_bandit22
+@reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+* * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+$ cat /usr/bin/cronjob_bandit22.sh
+chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+```
+
+## Level 22 -> 23
+
+A program is running automatically at regular intervals from **cron**, the time-based job scheduler. Look in **/etc/cron.d/** for the configuration and see what command is being executed.
+
+**NOTE:** Looking at shell scripts written by other people is a very useful skill. The script for this level is intentionally made easy to read. If you are having problems understanding what it does, try executing it to see the debug information it prints.d.
+```
+$ cd /etc/cron.d
+$ ls -l
+-rw-r--r-- 1 root root 120 Nov 13 15:58 cronjob_bandit22
+-rw-r--r-- 1 root root 122 Nov 13 15:58 cronjob_bandit23
+-rw-r--r-- 1 root root 120 Nov 13 15:58 cronjob_bandit24
+-rw-r--r-- 1 root root 190 Oct 31 13:21 popularity-contest
+$ cat cronjob_bandit23 
+@reboot bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+* * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+$ cat /usr/bin/cronjob_bandit23.sh
+#!/bin/bash
+
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+cat /etc/bandit_pass/$myname > /tmp/$mytarget
+$ echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+8ca319486bfbbc3663ea0fbe81326349
+$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+```
+
+## Level 23 -> 24
+
+A program is running automatically at regular intervals from **cron**, the time-based job scheduler. Look in **/etc/cron.d/** for the configuration and see what command is being executed.
+
+**NOTE:** This level requires you to create your own first shell-script. This is a very big step and you should be proud of yourself when you beat this level!
+
+**NOTE 2:** Keep in mind that your shell script is removed once executed, so you may want to keep a copy around…
+```
+$ cd /etc/cron.d
+$ cat cronjob_bandit24
+@reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+* * * * * bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+$ cat /usr/bin/cronjob_bandit24.sh
+#!/bin/bash
+
+myname=$(whoami)
+
+cd /var/spool/$myname
+echo "Executing and deleting all scripts in /var/spool/$myname:"
+for i in * .*;
+do
+    if [ "$i" != "." -a "$i" != ".." ];
+    then
+        echo "Handling $i"
+        timeout -s 9 60 ./$i
+        rm -f ./$i
+    fi
+done
+$ mkdir /tmp/test1234
+$ cd /tmp/test1234
+$ nano bandit24.sh
+$ cat /etc/bandit_pass/bandit24 >> /tmp/test1234/bandit24
+$ chmod 777 bandit24.sh
+$ chmod 777 /tmp/test1234
+$ cp bandit24.sh /var/spool/bandit24/
+$ cat /tmp/test1234/bandit24
+UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+```
+
+## Level 24 -> 25
+
+A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
+```
+$ nc localhost 30002
+I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+$ mkdir /tmp/test24
+$ cd /tmp/test24
+$ nano brute-force.sh
+for i in {1..10000}
+
+do
+        echo "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ $i" >> ./24.txt
+done
+$ chmod 700 ./brute-force.sh
+$ cat 24.txt | nc localhost 30002
+Correct!
+The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+```
+
+## Level 25 -> 26
+
+Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not **/bin/bash**, but something else. Find out what it is, how it works and how to break out of it..
+```
+$ ls
+bandit26.sshkey
+$ ssh bandit26@localhost -i bandit26.sshkey
+  _                     _ _ _   ___   __  
+ | |                   | (_) | |__ \ / /  
+ | |__   __ _ _ __   __| |_| |_   ) / /_  
+ | '_ \ / _` | '_ \ / _` | | __| / / '_ \ 
+ | |_) | (_| | | | | (_| | | |_ / /| (_) |
+ |_.__/ \__,_|_| |_|\__,_|_|\__|____\___/ 
+Connection to localhost closed.
+$ cat /etc/passwd | grep bandit26
+bandit26:x:11026:11026:bandit level 26:/home/bandit26:/usr/bin/showtext
+$ cat /usr/bin/showtext
+#!/bin/sh
+
+export TERM=linux
+
+more ~/text.txt
+exit 0
+<make terminal vertically small to trigger more>
+$ ssh bandit26@localhost -i bandit26.sshkey
+v (escape shell and enter visual mode
+:set shell=/bin/bash
+:shell
+$ cat README.txt
+Congratulations on solving the last level of this game!
+
+At this moment, there are no more levels to play in this game. However, we are constantly working
+on new levels and will most likely expand this game with more levels soon.
+Keep an eye out for an announcement on our usual communication channels!
+In the meantime, you could play some of our other wargames.
+
+If you have an idea for an awesome new level, please let us know!
+```
