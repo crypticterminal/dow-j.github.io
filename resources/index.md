@@ -2,6 +2,7 @@
 layout: page
 permalink: /resources/
 title: Resources
+published: true
 ---
 
 A collection of useful programming and information security blogs/tools that I've found over the years.
@@ -36,4 +37,4 @@ Team captain of the famous [Dragon Sector](http://dragonsector.pl/) CTF team. Se
 
 ### [Kali Linux](https://www.kali.org/)
 
-The de-facto pentesting Linux Distro. If you're even remotely interested in InfoSec you probably already have Kali in  your tool belt. Created and maintained by the team at [Offensive Security](https://www.offensive-security.com/).
+The de facto pentesting Linux Distro. If you're even remotely interested in InfoSec you probably already have Kali in  your tool belt. Created and maintained by the team at [Offensive Security](https://www.offensive-security.com/).
