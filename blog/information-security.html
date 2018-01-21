@@ -4,7 +4,49 @@ title: Information Security
 permalink: /blog/information-security
 author: all
 ---
-
-{% for post in site.categories.information-security %}
-  {% include blog_item.html %}
-{% endfor %}
+<article>
+  <section class="enum-box">
+    <div class="grid">
+      <div class="unit whole">
+        <div class="grid pane">
+          <div class="unit whole center-on-mobiles">
+            <div class="pane-content">
+              <h1>Information Security
+                <a href="/blog/information-security" class="permalink" title="Permalink">∞</a>
+              </h1>
+              <p>
+                All blog posts with subject matter related to <strong>Information Security</strong>.
+                With a <em>slight</em> emphasis on <strong>AppSec</strong>.
+              </p>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="mobile-side-scroller">
+    <table>
+      <thead>
+        <th>Date</th>
+        <th>Post Title</th>
+      </thead>
+      <tbody>
+         {% for post in site.categories.information-security %}
+        <tr>
+          <td>
+            <p>
+              <code>{{ post.date | date_to_string}}</code>
+            </p>
+          </td>
+          <td>
+            <a href="{{ post.url }}">
+              {{ post.title }}
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</article>

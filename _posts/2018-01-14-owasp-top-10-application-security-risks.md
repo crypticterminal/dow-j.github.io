@@ -5,6 +5,10 @@ author: dow-j
 categories: [information-security]
 ---
 
+* TOC
+{:toc}
+{: .markdown-toc}
+
 Open Web Application Security Project (OWASP) is a non-profit orgization dedicated to providing direct, unbiased, and practical information about application security. One of the orgizations most well-known endeavors is the [OWASP Top 10](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project) which consists of the top 10 biggest web application security risks identified by OWASP.
 
 The list is considered a benchmark in AppSec and its primary aim is to educate developers, designers, architects, managers, and organizations about the consequences of the most common and most important web application security weaknesses. The Top 10 provides basic techniques to protect against these high risk problem areas, and provides guidance on where to go from here.
