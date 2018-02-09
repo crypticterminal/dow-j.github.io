@@ -1,15 +1,17 @@
 ---
-title:  "Mr Robot 1 Walkthough"
-date:   2018-02-08 13:28:00 +0000
+title: Mr Robot 1 Walkthough
+date: '2018-02-08 13:28:00 +0000'
 author: dow-j
-categories: [walkthroughs]
+categories:
+  - walkthroughs
+published: true
 ---
 
 * TOC
 {:toc}
 {: .markdown-toc}
 
-This past week I completed the Mr Robot 1 VM, based on the show. There isn't anything terribly difficult with this VM, but it is enjoyable nonetheless.
+This past week I completed the (Mr Robot 1 VM)[https://www.vulnhub.com/entry/mr-robot-1,151/], based on the show. There isn't anything terribly difficult with this VM, but it is enjoyable nonetheless.
 
 ## 0. Enumeration
 
@@ -374,5 +376,5 @@ cat key-3-of-3.txt
 bash-4.3# 
 ```
 
-And there we have it, the final flag `04787ddef27c3dee1ee161b21670b4e4`. Nothing too difficult but a fun VM at any rate.
-
+And there we have it the final flag `04787ddef27c3dee1ee161b21670b4e4`.
+Thanks for reading!
