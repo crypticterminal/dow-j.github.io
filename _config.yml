@@ -1,13 +1,25 @@
+# Sass
 sass:
   style: compressed
 
-google_analytics_id: UA-109895875-2
-google_site_verification: H-MdKpqki24_rLfdJpmA-mmp058rsddryeOo1mRyYng
-
+# Site information
+title: JDow.io
+description: A Software Development and Information Security Blog
+url: https://jdow.io
+logo: /img/jdowio.png
+timezone: America/New_York
 repository: https://github.com/dow-j/jdow.io
 
-timezone: America/New_York
+# Posts
+excerpt_separator: <!--more-->
 
+# SEO
+google_analytics_id: UA-109895875-2
+webmaster_verifications:
+  google: H-MdKpqki24_rLfdJpmA-mmp058rsddryeOo1mRyYng
+  bing: 458150BA7AA467A6A35A693CE3117408
+
+# Defaults
 defaults:
   -
     scope:
@@ -22,6 +34,7 @@ defaults:
     values:
       layout: "blog_item"
 
+# Collections
 collections:
   docs:
     permalink: /:collection/:path/
@@ -32,20 +45,16 @@ collections:
   tutorials:
     output: true
 
-title: JDow.io
-description: A Software Development and Information Security Blog
-url: https://jdow.io
-
-twitter:
-  username: 0xJDow
-
+# Social
 social:
   twitter: 0xJDow
   github: Dow-J
   linkedin: joshua-dow-2187b6b5
 
-logo: /img/jdowio.png
+twitter:
+  username: 0xJDow
 
+# Plugins
 plugins:
   - jekyll-avatar
   - jekyll-feed

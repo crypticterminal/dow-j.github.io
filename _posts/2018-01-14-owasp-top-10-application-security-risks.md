@@ -11,6 +11,8 @@ categories: [information-security]
 
 Open Web Application Security Project (OWASP) is a non-profit orgization dedicated to providing direct, unbiased, and practical information about application security. One of the orgizations most well-known endeavors is the [OWASP Top 10](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project) which consists of the top 10 biggest web application security risks identified by OWASP.
 
+<!--more-->
+
 The list is considered a benchmark in AppSec and its primary aim is to educate developers, designers, architects, managers, and organizations about the consequences of the most common and most important web application security weaknesses. The Top 10 provides basic techniques to protect against these high risk problem areas, and provides guidance on where to go from here.
 
 The 2017 OWASP Top 10 list has recently been re-released to the public after the initial version was received with some controversy. The new and revised list is based on over 40 data submissions from firms that specialize in application security and an industry survey that was completed by over 500 individuals. It contains three large-scale vulnerability updates and updated attack scenarios. Let’s take a closer look at the list as a whole and what key changes were made in OWASP Top 10 Application Security Risks 2017.

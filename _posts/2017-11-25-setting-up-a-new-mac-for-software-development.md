@@ -2,6 +2,7 @@
 title: Setting Up a New Mac for Software Development
 date: '2017-11-25 13:28:00 +0000'
 author: dow-j
+toc: true
 categories:
   - software-development
 published: true
@@ -12,6 +13,8 @@ published: true
 {: .markdown-toc}
 
 Hi everyone and welcome to my site! This is my first blog post so please bear with me while I get the hang of things. If you'd like to learn a little bit more about me be sure to check out my [about me](https://jdow.io/about/) page.
+
+<!--more-->
 
 I recently purchased a new MacBook Air and I figured that I would document the steps I took to get everything up and running.
 

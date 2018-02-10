@@ -13,6 +13,8 @@ published: true
 
 This past week I completed the [Mr Robot 1 VM](https://www.vulnhub.com/entry/mr-robot-1,151/), based on the show. There isn't anything terribly difficult with this VM, but it is enjoyable nonetheless.
 
+<!--more-->
+
 ## 0. Enumeration
 
 Starting things off with a quick nmap scan

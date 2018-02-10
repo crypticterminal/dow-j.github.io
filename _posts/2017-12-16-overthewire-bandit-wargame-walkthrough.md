@@ -13,6 +13,8 @@ published: true
 
 Lately I've been having a lot of fun with wargames, particularly those done by [OverTheWire](http://overthewire.org/wargames/). I've completed a few of their servers at the time of writing this, and what follows is the solution to their "Bandit" wargame. This server is intended for those new to the site, but you should have some _basic_ linux familiarity before jumping in.
 
+<!--more-->
+
 I **highly** recommending attempting the levels yourself first before referring to my solutions.
 
 ## Level 0
