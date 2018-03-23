@@ -13,6 +13,9 @@
       <li class="{% if page.title == 'Walkthroughs' %}current{% endif %}">
         <a href="/blog/walkthroughs">Walkthroughs</a>
       </li>
+      <li class="{% if page.title == 'Cheat Sheets' %}current{% endif %}">
+        <a href="/blog/cheat-sheets">Cheat Sheets</a>
+      </li>
     </ul>
     <h4>Software Development</h4>
     <ul>
@@ -45,6 +48,17 @@
       {% endfor %}
       <li>
         <a href="/blog/walkthroughs">More »</a>
+      </li>
+    </ul>
+    <h4>Cheat Sheets</h4>
+    <ul>
+      {% for post in site.categories.walkthroughs limit:5 %}
+      <li class="{% if page.title == post.title %}current{% endif %}">
+        <a href="{{ post.url }}"> {{ post.title }}</a>
+      </li>
+      {% endfor %}
+      <li>
+        <a href="/blog/cheat-sheets">More »</a>
       </li>
     </ul>
   </aside>

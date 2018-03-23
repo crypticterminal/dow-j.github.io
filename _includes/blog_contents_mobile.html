@@ -17,5 +17,10 @@
       <option value="{{ post.url }}">{{ post.title }}</option>
       {% endfor %}
     </optgroup>
+    <optgroup label="Cheat Sheets">
+      {% for post in site.categories.cheat-sheets %}
+      <option value="{{ post.url }}">{{ post.title }}</option>
+      {% endfor %}
+    </optgroup>
   </select>
 </div>
