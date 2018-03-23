@@ -52,7 +52,7 @@
     </ul>
     <h4>Cheat Sheets</h4>
     <ul>
-      {% for post in site.categories.walkthroughs limit:5 %}
+      {% for post in site.categories.cheat-sheets limit:5 %}
       <li class="{% if page.title == post.title %}current{% endif %}">
         <a href="{{ post.url }}"> {{ post.title }}</a>
       </li>
