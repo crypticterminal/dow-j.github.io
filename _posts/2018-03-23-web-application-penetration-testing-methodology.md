@@ -2,8 +2,7 @@
 title: Web Application Penetration Testing Cheat Sheet
 date: '2018-03-18 13:28:00 +0000'
 author: dow-j
-categories:
-  - cheat-sheets
+categories: 'cheat-sheets'
 published: true
 ---
 
