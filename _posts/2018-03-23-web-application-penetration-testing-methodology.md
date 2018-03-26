@@ -902,7 +902,7 @@ If you've determined that the target application is indeed vulnerable to XSS dur
 
 Generally this is something you would use your own browser for in an isolated environment as a proof of concept for just how dangerous XSS is when you eventually present your findings to the client.
 
-### Exploting SQL injection
+### Exploiting SQL injection
 
 #### Data Extraction
 
