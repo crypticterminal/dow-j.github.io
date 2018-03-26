@@ -856,8 +856,7 @@ Same as REST, these services should be tested for the same vulnerabilities as th
   * e.g. <http://exampleapplication.com/service>
 * View the WSDL file for the service to load it into Burp
 * Go to the Burp Proxy history tab and add the WSDL file to the Wsdler extension via the "Parse WSDL" context menu option.
-* Send the sample request to Repeater and explore how the service works
-* Continue to use Burp to test the service as you would for any other HTTP request using the techniques discussed in class
+* Send the sample request to Repeater and determine how the service works
 
 Please refer to these articles for additional resources when testing SOAP APIs.
 
